@@ -1,13 +1,12 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GlassButton } from "@/components/ui/GlassButton";
 import { Mail, MapPin, Github, Linkedin, ArrowRight } from "lucide-react";
 
-export const metadata = {
-    title: "Contact - Alexandre KEOLASY",
-    description: "Discutons de votre projet et de vos besoins en développement web.",
-};
+
 
 export default function ContactPage() {
     return (
