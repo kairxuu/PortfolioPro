@@ -37,7 +37,7 @@ export const Header = () => {
             )}
         >
             <Link href="/" className="flex items-center group shrink-0">
-                <div className="w-12 h-12 rounded-full bg-foreground text-background-secondary flex items-center justify-center font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 rounded-full bg-foreground text-white flex items-center justify-center font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">
                     AK
                 </div>
             </Link>
@@ -54,7 +54,7 @@ export const Header = () => {
                                     className={cn(
                                         "px-5 py-3 rounded-full transition-all duration-300",
                                         isActive
-                                            ? "bg-foreground text-background-secondary shadow-md"
+                                            ? "bg-foreground text-white shadow-md"
                                             : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
                                     )}
                                 >

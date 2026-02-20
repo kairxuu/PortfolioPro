@@ -107,11 +107,11 @@ export default function ProjetsPage() {
                                     {project.isPrivate ? (
                                         <div
                                             title="Code source privé"
-                                            className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-foreground/40 shrink-0 border border-[var(--glass-border)] cursor-not-allowed relative"
+                                            className="w-14 h-14 rounded-full bg-[var(--background)] flex items-center justify-center text-foreground/30 shrink-0 border border-[var(--glass-border)] cursor-not-allowed relative"
                                         >
-                                            <Github className="w-6 h-6 opacity-30" />
-                                            <div className="absolute -bottom-1 -right-1 bg-background-secondary border border-[var(--glass-border)] rounded-full p-1.5 shadow-sm">
-                                                <Lock className="w-3 h-3 text-foreground" />
+                                            <Github className="w-6 h-6" />
+                                            <div className="absolute -bottom-1 -right-1 bg-white border border-[var(--glass-border)] rounded-full p-1.5 shadow-sm">
+                                                <Lock className="w-3 h-3 text-black" />
                                             </div>
                                         </div>
                                     ) : (
@@ -119,9 +119,10 @@ export default function ProjetsPage() {
                                             href={project.githubLink}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-foreground shrink-0 border border-[var(--glass-border)] transition-colors"
+                                            title="Voir le code source"
+                                            className="w-14 h-14 rounded-full bg-[var(--glass-bg)] flex items-center justify-center text-foreground shrink-0 border border-[var(--glass-border)] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 hover:bg-foreground/5 group"
                                         >
-                                            <Github className="w-6 h-6" />
+                                            <Github className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                                         </a>
                                     )}
                                 </div>

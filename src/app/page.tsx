@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -12,6 +12,17 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 export default function Home() {
   const containerRef = useRef(null);
   const sectionRef = useRef(null);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); // set initial
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Advanced Parallax Global
   const { scrollYProgress } = useScroll({
@@ -34,23 +45,57 @@ export default function Home() {
   const heroY = useTransform(smoothProgress, [0, 1], ["0%", "50%"]);
   const textY = useTransform(smoothProgress, [0, 0.4], ["0%", "60%"]);
 
+  // Mobile vs Desktop 3D Transform Values
+  const scaleValues = isMobile ? [0.85, 1.05, 0.9] : [0.7, 1.25, 0.8];
+  const rotateXValues = isMobile ? [20, 0, -15] : [40, 0, -30];
+  const rotateYValues = isMobile ? [-10, 0, 10] : [-25, 0, 20];
+  const zValues = isMobile ? [-150, 0, -100] : [-300, 50, -200];
+
+  const cardScale = useTransform(smoothSectionProgress, [0, 0.5, 1], scaleValues);
+  const cardRotateX = useTransform(smoothSectionProgress, [0, 0.5, 1], rotateXValues);
+  const cardRotateY = useTransform(smoothSectionProgress, [0, 0.5, 1], rotateYValues);
+  const cardZ = useTransform(smoothSectionProgress, [0, 0.5, 1], zValues);
+
   return (
     <main className="min-h-screen bg-[var(--background)] flex flex-col relative" ref={containerRef}>
       <Header />
 
       {/* Stunning 3D Parallax Hero */}
       <section className="relative h-[120vh] flex items-center justify-center overflow-hidden">
-        {/* Deep Parallax Background */}
+        {/* Deep Parallax Background - Dynamic Dark Mesh */}
         <motion.div
-          className="absolute inset-0 z-0 origin-center"
-          style={{ scale: heroScale, y: heroY, opacity: heroOpacity }}
+          className="absolute inset-0 z-0 origin-center bg-black overflow-hidden"
+          style={{ scale: heroScale, opacity: heroOpacity }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background z-10" />
-          <img
-            src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&q=80&w=2564"
-            alt="Abstract Premium Background"
-            className="w-full h-full object-cover opacity-90"
-          />
+          {/* Base Noise for Texture - Reduced opacity significantly */}
+          <div className="absolute inset-0 z-20 opacity-5 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
+
+          {/* Dynamic Halos reacting to Scroll */}
+          <div className="absolute inset-0 z-0 filter blur-[100px] opacity-25">
+            <motion.div
+              className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-900/40"
+              style={{
+                x: useTransform(smoothProgress, [0, 1], ["0%", "30%"]),
+                y: useTransform(smoothProgress, [0, 1], ["0%", "40%"]),
+                scale: useTransform(smoothProgress, [0, 0.5, 1], [1, 1.2, 0.8]),
+              }}
+            />
+            <motion.div
+              className="absolute top-[20%] right-[-10%] w-[50%] h-[70%] rounded-full bg-violet-900/30"
+              style={{
+                x: useTransform(smoothProgress, [0, 1], ["0%", "-40%"]),
+                y: useTransform(smoothProgress, [0, 1], ["0%", "20%"]),
+              }}
+            />
+            <motion.div
+              className="absolute bottom-[-20%] left-[20%] w-[80%] h-[60%] rounded-full bg-slate-800/40"
+              style={{
+                x: useTransform(smoothProgress, [0, 1], ["0%", "20%"]),
+                y: useTransform(smoothProgress, [0, 1], ["0%", "-50%"]),
+                rotate: useTransform(smoothProgress, [0, 1], [0, 45]),
+              }}
+            />
+          </div>
         </motion.div>
 
         {/* Hero Typography */}
@@ -63,23 +108,23 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-6xl md:text-[8rem] lg:text-[11rem] font-bold tracking-tighter text-foreground mb-6 leading-none">
+            <h1 className="text-6xl md:text-[8rem] lg:text-[11rem] font-bold tracking-tighter text-white mb-6 leading-none">
               Alexandre KEOLASY.
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground-secondary max-w-5xl mx-auto font-light leading-tight mb-12 tracking-tight">
+            <p className="text-2xl md:text-3xl text-neutral-400 max-w-5xl mx-auto font-light leading-tight mb-12 tracking-tight">
               Ingénierie Front-End & Design d'Interfaces. <br className="hidden md:block" />Je conçois des écosystèmes web performants, scalables et centrés sur la conversion.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/projets">
-                <GlassButton variant="primary" className="w-full sm:w-auto text-lg px-10 h-16 rounded-full shadow-lg">
+                <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white text-black font-semibold text-lg px-10 h-16 shadow-[0_8px_20px_rgba(255,255,255,0.18),0_2px_4px_rgba(255,255,255,0.12)] hover:-translate-y-1 transition-all">
                   Explorer les travaux
-                </GlassButton>
+                </button>
               </Link>
               <div className="flex items-center gap-4 hidden sm:flex">
-                <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer" className="w-16 h-16 rounded-full glass-panel border border-[var(--glass-border)] flex items-center justify-center text-foreground/70 hover:text-foreground shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-1">
+                <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer" className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white shadow-lg transition-all hover:-translate-y-1 hover:bg-white/10">
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="https://www.linkedin.com/in/alexandre-keolasy-287887276" target="_blank" rel="noreferrer" className="w-16 h-16 rounded-full glass-panel border border-[var(--glass-border)] flex items-center justify-center text-foreground/70 hover:text-foreground shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-1">
+                <a href="https://www.linkedin.com/in/alexandre-keolasy-287887276" target="_blank" rel="noreferrer" className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white shadow-lg transition-all hover:-translate-y-1 hover:bg-white/10">
                   <Linkedin className="w-6 h-6" />
                 </a>
               </div>
@@ -152,7 +197,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="relative flex-grow flex flex-col justify-center p-10 md:p-12 bg-background-secondary z-20">
+            <div className="relative flex-grow flex flex-col justify-center p-10 md:p-12 bg-white z-20">
               <h2 className="text-[11px] font-bold text-foreground-secondary tracking-widest uppercase mb-3">Projet Star</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Wyze Academy</h3>
               <p className="text-foreground-secondary max-w-xl mb-8 text-xl font-light leading-relaxed">
@@ -179,7 +224,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           <GlassCard className="p-8">
-            <div className="w-14 h-14 rounded-2xl bg-background-secondary border border-[var(--glass-border)] flex items-center justify-center mb-8">
+            <div className="w-14 h-14 rounded-2xl bg-white border border-[var(--glass-border)] flex items-center justify-center mb-8 shadow-sm">
               <Zap className="w-6 h-6 text-foreground" />
             </div>
             <h4 className="text-xl font-bold text-foreground mb-4">Performance Native</h4>
@@ -189,7 +234,7 @@ export default function Home() {
           </GlassCard>
 
           <GlassCard className="p-8">
-            <div className="w-14 h-14 rounded-2xl bg-background-secondary border border-[var(--glass-border)] flex items-center justify-center mb-8">
+            <div className="w-14 h-14 rounded-2xl bg-white border border-[var(--glass-border)] flex items-center justify-center mb-8 shadow-sm">
               <Layers className="w-6 h-6 text-foreground" />
             </div>
             <h4 className="text-xl font-bold text-foreground mb-4">Scalabilité</h4>
@@ -199,7 +244,7 @@ export default function Home() {
           </GlassCard>
 
           <GlassCard className="p-8">
-            <div className="w-14 h-14 rounded-2xl bg-background-secondary border border-[var(--glass-border)] flex items-center justify-center mb-8">
+            <div className="w-14 h-14 rounded-2xl bg-white border border-[var(--glass-border)] flex items-center justify-center mb-8 shadow-sm">
               <Smartphone className="w-6 h-6 text-foreground" />
             </div>
             <h4 className="text-xl font-bold text-foreground mb-4">Expérience Immersive</h4>
@@ -247,12 +292,12 @@ export default function Home() {
         {/* The 3D Perspective Container */}
         <div className="relative z-10 w-full max-w-5xl px-6 perspective-[2000px] flex items-center justify-center h-full">
           <motion.div
-            className="relative w-full max-w-4xl aspect-[16/9] rounded-3xl border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl shadow-2xl flex flex-col items-center justify-center p-12 overflow-hidden transform-style-3d origin-center"
+            className="relative w-full max-w-4xl aspect-square md:aspect-[16/9] rounded-3xl border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl shadow-2xl flex flex-col items-center justify-center p-6 md:p-12 overflow-hidden transform-style-3d origin-center"
             style={{
-              scale: useTransform(smoothSectionProgress, [0, 0.5, 1], [0.7, 1.25, 0.8]),
-              rotateX: useTransform(smoothSectionProgress, [0, 0.5, 1], [40, 0, -30]),
-              rotateY: useTransform(smoothSectionProgress, [0, 0.5, 1], [-25, 0, 20]),
-              z: useTransform(smoothSectionProgress, [0, 0.5, 1], [-300, 50, -200]),
+              scale: cardScale,
+              rotateX: cardRotateX,
+              rotateY: cardRotateY,
+              z: cardZ,
             }}
           >
             {/* Internal Parallax Layers */}
@@ -299,7 +344,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           className="flex flex-col items-center gap-8"
         >
-          <div className="w-20 h-20 rounded-full bg-background-secondary border border-[var(--glass-border)] flex items-center justify-center shadow-sm mb-4">
+          <div className="w-20 h-20 rounded-full bg-white border border-[var(--glass-border)] flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.05)] mb-4">
             <span className="relative flex h-4 w-4">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground opacity-20"></span>
               <span className="relative inline-flex rounded-full h-4 w-4 bg-foreground"></span>
@@ -320,6 +365,6 @@ export default function Home() {
       </section>
 
       <Footer />
-    </main>
+    </main >
   );
 }
