@@ -5,7 +5,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Alexandre Keolasy | Portfolio",
+  title: {
+    template: "%s | Alexandre Keolasy",
+    default: "Alexandre Keolasy | Portfolio",
+  },
   description: "Portfolio de développeur Front-end & UI/UX Designer.",
 };
 
