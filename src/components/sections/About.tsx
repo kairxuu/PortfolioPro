@@ -25,7 +25,7 @@ export const About = () => {
                     viewport={{ once: true }}
                     className="text-4xl md:text-5xl font-bold text-foreground tracking-tight"
                 >
-                    AntiGravity Mindset
+                    Vision & Mindset
                 </motion.h2>
                 <p className="text-foreground-secondary max-w-2xl">
                     Concevoir sans contraintes. Développer avec rigueur.
@@ -40,7 +40,7 @@ export const About = () => {
                         Je suis <strong className="text-foreground font-semibold">Alexandre Keolasy</strong>, développeur front-end & UI/UX designer basé à Paris. Mon objectif est de fusionner le design ultra-moderne avec des performances techniques de pointe pour créer des expériences web qui marquent les esprits.
                     </p>
                     <p className="text-foreground-secondary leading-relaxed relative z-10">
-                        Spécialisé dans les écosystèmes modernes comme <strong>Next.js</strong> et <strong>React</strong>, j'intègre l'IA et les meilleures pratiques d'optimisation pour offrir un résultat <span className="text-accent-blue font-medium">AntiGravity</span> : léger, rapide et fluide.
+                        Spécialisé dans les écosystèmes modernes comme <strong>Next.js</strong> et <strong>React</strong>, j'intègre l'IA et les meilleures pratiques d'optimisation pour offrir un résultat <span className="font-medium text-foreground">Premium</span> : léger, rapide et fluide.
                     </p>
                 </GlassCard>
 
@@ -67,7 +67,7 @@ export const About = () => {
                 {/* Location - Square Tile */}
                 <GlassCard hoverEffect className="md:col-span-1 md:row-span-1 p-6 flex flex-col items-center justify-center text-center group">
                     <div className="w-16 h-16 rounded-full bg-background/40 border border-[var(--glass-border)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-                        <MapPin className="w-8 h-8 text-foreground-secondary group-hover:text-accent-blue transition-colors" />
+                        <MapPin className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors" />
                     </div>
                     <h4 className="text-lg font-bold text-foreground mb-1">Basé à Paris</h4>
                     <p className="text-sm text-foreground-secondary">Remote Friendly</p>

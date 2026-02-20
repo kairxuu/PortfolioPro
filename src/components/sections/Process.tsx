@@ -10,35 +10,35 @@ const steps = [
         step: "01",
         title: "Discovery & Stratégie",
         desc: "Analyse des besoins et stratégie technique.",
-        icon: <Compass className="w-6 h-6 text-foreground-secondary group-hover:text-accent-blue transition-colors" />,
+        icon: <Compass className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     },
     {
         step: "02",
         title: "Wireframes & UI",
         desc: "Conception en Glassmorphism dark et protos intéractifs.",
-        icon: <Palette className="w-6 h-6 text-foreground-secondary group-hover:text-accent-blue transition-colors" />,
+        icon: <Palette className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     },
     {
         step: "03",
         title: "Développement",
         desc: "Code modulaire et performant avec Next.js et Tailwind.",
-        icon: <Code2 className="w-6 h-6 text-foreground-secondary group-hover:text-accent-blue transition-colors" />,
+        icon: <Code2 className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     },
     {
         step: "04",
         title: "Tests & Déploiement Vercel",
         desc: "Audits de performance rigoureux, correction de bugs et mise en production fluide (CI/CD).",
-        icon: <Rocket className="w-6 h-6 text-foreground-secondary group-hover:text-accent-blue transition-colors" />,
+        icon: <Rocket className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-2"
     },
     {
         step: "05",
         title: "Suivi & Évolutions",
         desc: "Monitoring post-lancement et optimisations continues.",
-        icon: <LineChart className="w-6 h-6 text-foreground-secondary group-hover:text-accent-blue transition-colors" />,
+        icon: <LineChart className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     }
 ];
@@ -53,7 +53,7 @@ export const Process = () => {
                     viewport={{ once: true }}
                     className="text-4xl md:text-5xl font-bold text-foreground tracking-tight"
                 >
-                    Méthodologie AntiGravity
+                    Méthodologie Pro
                 </motion.h2>
                 <p className="text-foreground-secondary max-w-2xl">
                     Un processus itératif, transparent et professionnel pour garantir le succès de chaque projet.

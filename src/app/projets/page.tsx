@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Projects as ProjectsSection } from "@/components/sections/Projects";
 
 export const metadata = {
-    title: "Projets - AntiGravity",
+    title: "Projets",
     description: "Découvrez mes derniers travaux en design et développement.",
 };
 

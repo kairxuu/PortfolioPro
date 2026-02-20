@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Blog as BlogSection } from "@/components/sections/Blog";
 
 export const metadata = {
-    title: "Blog - AntiGravity",
+    title: "Blog",
     description: "Notes, réflexions et tutoriels sur le Design et le Développement.",
 };
 

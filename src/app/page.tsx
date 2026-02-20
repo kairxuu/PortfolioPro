@@ -87,7 +87,7 @@ export default function Home() {
                 une rigueur technique absolue à un minimalisme fonctionnel. Pas de superflu,
                 uniquement l'essentiel pour des expériences mémorables.
               </p>
-              <Link href="/about" className="text-foreground flex items-center gap-2 text-lg font-medium hover:text-accent-blue transition-colors w-fit group-hover:translate-x-2 duration-300">
+              <Link href="/about" className="text-foreground flex items-center gap-2 text-lg font-medium hover:text-foreground/70 transition-colors w-fit group-hover:translate-x-2 duration-300">
                 Découvrir mon parcours <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -105,19 +105,19 @@ export default function Home() {
             <div className="flex flex-col gap-8 flex-grow">
               <div className="flex items-center gap-6 group/item">
                 <div className="w-16 h-16 rounded-2xl bg-[var(--glass-bg)] border border-[var(--glass-border)] flex items-center justify-center group-hover/item:border-accent-blue/50 transition-colors">
-                  <Layout className="w-8 h-8 text-foreground/80 group-hover/item:text-accent-blue transition-colors" />
+                  <Layout className="w-8 h-8 text-foreground/80 group-hover/item:text-foreground transition-colors" />
                 </div>
                 <span className="text-foreground text-2xl font-medium tracking-tight">Design UI/UX</span>
               </div>
               <div className="flex items-center gap-6 group/item">
                 <div className="w-16 h-16 rounded-2xl bg-[var(--glass-bg)] border border-[var(--glass-border)] flex items-center justify-center group-hover/item:border-accent-blue/50 transition-colors">
-                  <Code2 className="w-8 h-8 text-foreground/80 group-hover/item:text-accent-blue transition-colors" />
+                  <Code2 className="w-8 h-8 text-foreground/80 group-hover/item:text-foreground transition-colors" />
                 </div>
                 <span className="text-foreground text-2xl font-medium tracking-tight">Frontend Avancé</span>
               </div>
               <div className="flex items-center gap-6 group/item">
                 <div className="w-16 h-16 rounded-2xl bg-[var(--glass-bg)] border border-[var(--glass-border)] flex items-center justify-center group-hover/item:border-accent-blue/50 transition-colors">
-                  <Cpu className="w-8 h-8 text-foreground/80 group-hover/item:text-accent-blue transition-colors" />
+                  <Cpu className="w-8 h-8 text-foreground/80 group-hover/item:text-foreground transition-colors" />
                 </div>
                 <span className="text-foreground text-2xl font-medium tracking-tight">Performance Web</span>
               </div>
@@ -128,24 +128,28 @@ export default function Home() {
           </GlassCard>
 
           {/* Project highlight */}
-          <GlassCard className="md:col-span-12 lg:col-span-7 p-0 overflow-hidden group relative min-h-[500px]">
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/40 to-transparent z-10" />
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-              alt="EcoSystem Dashboard"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out opacity-80"
-            />
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-10 md:p-14">
-              <h2 className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4">Projet Star</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">EcoSystem Dashboard</h3>
-              <p className="text-foreground max-w-xl mb-10 text-xl font-light">
+          <GlassCard className="md:col-span-12 lg:col-span-7 p-0 overflow-hidden group flex flex-col min-h-[600px]">
+            <div className="relative h-64 md:h-[360px] w-full overflow-hidden shrink-0 border-b border-[var(--glass-border)]">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                alt="EcoSystem Dashboard"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+              />
+            </div>
+
+            <div className="relative flex-grow flex flex-col justify-center p-10 md:p-12 bg-background-secondary z-20">
+              <h2 className="text-[11px] font-bold text-foreground-secondary tracking-widest uppercase mb-3">Projet Star</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight group-hover:text-foreground-secondary transition-colors duration-500">EcoSystem Dashboard</h3>
+              <p className="text-foreground-secondary max-w-xl mb-8 text-xl font-light leading-relaxed">
                 Un outil analytique ultra-performant aux visuels glassmorphism, intégrant des graphiques complexes en temps réel.
               </p>
-              <Link href="/projets">
-                <GlassButton variant="secondary" className="backdrop-blur-xl px-8 h-14 text-lg">
-                  Découvrir le projet
-                </GlassButton>
-              </Link>
+              <div className="mt-auto">
+                <Link href="/projets">
+                  <GlassButton variant="primary" className="h-12 px-8 rounded-full text-sm font-semibold shadow-md">
+                    Découvrir le projet
+                  </GlassButton>
+                </Link>
+              </div>
             </div>
           </GlassCard>
         </div>

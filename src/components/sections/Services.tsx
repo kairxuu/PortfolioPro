@@ -8,7 +8,7 @@ import { Layout, Zap, Search, Bot } from "lucide-react";
 const services = [
     {
         icon: <Layout className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors mb-4" />,
-        title: "Conception d'interfaces AntiGravity (UI/UX)",
+        title: "Conception d'interfaces fluides (UI/UX)",
         desc: "Design system sur-mesure, wireframes, prototypes interactifs et design final en Glassmorphism ou interfaces futuristes.",
         bulletPoints: ["Figma & Prototypage", "Design System", "Dark Mode natif"],
         className: "md:col-span-2 md:row-span-2" // Large feature
@@ -46,7 +46,7 @@ export const Services = () => {
                     viewport={{ once: true }}
                     className="text-4xl md:text-5xl font-bold text-foreground tracking-tight"
                 >
-                    Services AntiGravity
+                    Services de Développement
                 </motion.h2>
                 <p className="text-foreground-secondary max-w-2xl">
                     De l'idée à la mise en production, j'accompagne vos projets digitaux avec une approche orientée performance et esthétisme.

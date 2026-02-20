@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Contact as ContactSection } from "@/components/sections/Contact";
 
 export const metadata = {
-    title: "Contact - AntiGravity",
+    title: "Contact",
     description: "Discutons de votre projet.",
 };
 

@@ -15,15 +15,15 @@
 
 :root {
   /* Strict Apple Light Mode - Pure, Bright, High Contrast */
-  --background: #FFFFFF;
-  --background-secondary: #F5F5F7;
+  --background: #F5F5F7;
+  --background-secondary: #FFFFFF;
   --foreground: #1D1D1F;
   --foreground-secondary: #86868B;
 
   /* Glassmorphism - Clean & Subtle */
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.04);
-  --glass-border-hover: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 1);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-border-hover: rgba(0, 0, 0, 0.12);
 
   /* Single functional interactive color - rarely visible as text */
   --accent-blue: #0066CC;

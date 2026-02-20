@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Services as ServicesSection } from "@/components/sections/Services";
 
 export const metadata = {
-    title: "Services - AntiGravity",
+    title: "Services",
     description: "Développement web performant et UI/UX Design.",
 };
 

@@ -24,17 +24,17 @@ export const Contact = () => {
 
     return (
         <SectionWrapper id="contact" className="relative z-10">
-            <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+            <div className="w-full grid lg:grid-cols-2 gap-12 items-start">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     className="flex flex-col gap-6"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel w-fit border-white/10 text-sm font-medium text-accent-green mb-2">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel w-fit border-[var(--glass-border)] text-sm font-medium text-foreground-secondary mb-2">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground-secondary opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground-secondary"></span>
                         </span>
                         Disponible pour nouveaux projets
                     </div>
@@ -49,19 +49,19 @@ export const Contact = () => {
 
                     <div className="flex flex-col gap-4 mt-6">
                         <GlassCard className="p-4 flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue border border-accent-blue/20 shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-background-secondary flex items-center justify-center text-foreground-secondary border border-[var(--glass-border)] shrink-0">
                                 <Mail className="w-5 h-5" />
                             </div>
                             <div className="overflow-hidden">
                                 <p className="text-foreground/50 text-sm">Email direct</p>
-                                <a href="mailto:alexklsy@proton.me" className="text-foreground font-medium hover:text-accent-blue transition-colors truncate block">
+                                <a href="mailto:alexklsy@proton.me" className="text-foreground font-medium hover:text-foreground-secondary transition-colors truncate block">
                                     alexklsy@proton.me
                                 </a>
                             </div>
                         </GlassCard>
 
                         <GlassCard className="p-4 flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-accent-purple/10 flex items-center justify-center text-accent-purple border border-accent-purple/20 shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-background-secondary flex items-center justify-center text-foreground-secondary border border-[var(--glass-border)] shrink-0">
                                 <MapPin className="w-5 h-5" />
                             </div>
                             <div className="overflow-hidden">
@@ -86,7 +86,7 @@ export const Contact = () => {
 
                         {isSuccess ? (
                             <div className="flex flex-col items-center justify-center h-[400px] text-center gap-4 animate-in fade-in zoom-in">
-                                <div className="w-16 h-16 rounded-full bg-accent-green/20 text-accent-green flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(77,243,198,0.3)]">
+                                <div className="w-16 h-16 rounded-full bg-background-secondary text-foreground flex items-center justify-center mb-2 border border-[var(--glass-border)] shadow-sm">
                                     <Send className="w-8 h-8" />
                                 </div>
                                 <h4 className="text-xl font-bold text-foreground">Message Envoyé !</h4>
@@ -101,7 +101,7 @@ export const Contact = () => {
                                             type="text"
                                             id="name"
                                             required
-                                            className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue/50 transition-all font-medium"
+                                            className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all font-medium"
                                             placeholder="Nom complet"
                                         />
                                     </div>
@@ -111,7 +111,7 @@ export const Contact = () => {
                                             type="email"
                                             id="email"
                                             required
-                                            className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue/50 transition-all font-medium"
+                                            className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all font-medium"
                                             placeholder="Email"
                                         />
                                     </div>
@@ -150,7 +150,7 @@ export const Contact = () => {
                                         id="message"
                                         rows={4}
                                         required
-                                        className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-accent-purple focus:ring-1 focus:ring-accent-purple/50 transition-all resize-none font-medium"
+                                        className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all resize-none font-medium"
                                         placeholder="Parlez-moi de votre vision..."
                                     />
                                 </div>

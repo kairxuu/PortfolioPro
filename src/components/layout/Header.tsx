@@ -31,76 +31,63 @@ export const Header = () => {
     return (
         <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-                scrolled
-                    ? "bg-[var(--glass-bg)] backdrop-blur-xl border-[var(--glass-border)] py-4 shadow-lg"
-                    : "bg-transparent py-6"
+                "fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-auto",
+                "bg-[var(--glass-bg)] backdrop-blur-2xl border border-[var(--glass-border)] shadow-[0_20px_40px_rgba(0,0,0,0.1)]",
+                "rounded-full p-2 flex items-center gap-2 sm:gap-4",
+                scrolled ? "scale-95 opacity-90 hover:scale-100 hover:opacity-100" : "scale-100"
             )}
         >
-            <div className="w-full max-w-5xl px-6 mx-auto flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-xl bg-foreground text-background flex items-center justify-center font-bold text-xl transition-all shadow-sm group-hover:shadow-md">
-                        AK
-                    </div>
-                    <span className="font-bold text-xl tracking-tight text-foreground hidden sm:block">
-                        Portfolio
-                    </span>
+            <Link href="/" className="flex items-center group shrink-0">
+                <div className="w-12 h-12 rounded-full bg-foreground text-background-secondary flex items-center justify-center font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">
+                    AK
+                </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center">
+                <ul className="flex items-center gap-1 text-sm font-medium">
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                            <li key={link.name}>
+                                <Link
+                                    href={link.href}
+                                    className={cn(
+                                        "px-5 py-3 rounded-full transition-all duration-300",
+                                        isActive
+                                            ? "bg-foreground text-background-secondary shadow-md"
+                                            : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+                                    )}
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </nav>
+
+            {/* CTA & Mobile Toggle */}
+            <div className="flex items-center gap-2 shrink-0">
+                <Link href="/contact" tabIndex={-1} className="hidden sm:block">
+                    <GlassButton variant="primary" className="h-12 px-6 text-sm rounded-full">
+                        Me contacter
+                    </GlassButton>
                 </Link>
 
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
-                    <ul className="flex items-center gap-8 text-sm font-medium text-foreground/70">
-                        {navLinks.map((link) => {
-                            const isActive = pathname === link.href;
-                            return (
-                                <li key={link.name}>
-                                    <Link
-                                        href={link.href}
-                                        className={cn(
-                                            "transition-colors",
-                                            isActive ? "text-foreground font-semibold" : "hover:text-foreground"
-                                        )}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </nav>
-
-                {/* Desktop CTA & Theme */}
-                <div className="hidden md:flex items-center gap-4">
-                    <div className="flex items-center gap-3 text-foreground/70 mr-2">
-                        <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
-                            <Github className="w-5 h-5" />
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
-                            <Linkedin className="w-5 h-5" />
-                        </a>
-                    </div>
-                    <Link href="/contact" tabIndex={-1}>
-                        <GlassButton variant="primary">
-                            Me contacter
-                        </GlassButton>
-                    </Link>
-                </div>
-
-                {/* Mobile menu */}
-                <div className="md:hidden flex items-center gap-2">
-                    <button
-                        className="text-foreground p-2"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
-                </div>
+                {/* Mobile menu toggle */}
+                <button
+                    className="md:hidden text-foreground w-12 h-12 flex items-center justify-center rounded-full hover:bg-foreground/5 transition-colors"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                    {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
             </div>
 
             {/* Mobile Nav */}
             {mobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t-0 rounded-b-2xl p-6 flex flex-col gap-6 animate-in fade-in slide-in-from-top-4 shadow-xl">
-                    <ul className="flex flex-col gap-4 text-center">
+                <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[90vw] max-w-[320px] bg-[var(--glass-bg)] backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-6 animate-in slide-in-from-top-4 shadow-2xl border border-[var(--glass-border)]">
+                    <ul className="flex flex-col gap-2 text-center">
                         {navLinks.map((link) => {
                             const isActive = pathname === link.href;
                             return (
@@ -108,8 +95,8 @@ export const Header = () => {
                                     <Link
                                         href={link.href}
                                         className={cn(
-                                            "text-foreground/80 hover:text-foreground text-lg block p-2",
-                                            isActive && "font-bold text-foreground"
+                                            "block p-3 rounded-xl transition-colors",
+                                            isActive ? "bg-foreground text-background-secondary font-semibold" : "text-foreground/80 hover:bg-foreground/5"
                                         )}
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -119,17 +106,17 @@ export const Header = () => {
                             );
                         })}
                     </ul>
-                    <div className="flex flex-col gap-4 mt-4 border-t border-foreground/10 pt-6">
+                    <div className="flex flex-col gap-4 mt-2 border-t border-[var(--glass-border)] pt-6">
                         <div className="flex justify-center gap-6 text-foreground/70">
-                            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground">
-                                <Github className="w-6 h-6" />
+                            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground p-2 bg-background-secondary rounded-full">
+                                <Github className="w-5 h-5" />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground">
-                                <Linkedin className="w-6 h-6" />
+                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground p-2 bg-background-secondary rounded-full">
+                                <Linkedin className="w-5 h-5" />
                             </a>
                         </div>
                         <Link href="/contact" tabIndex={-1} className="w-full" onClick={() => setMobileMenuOpen(false)}>
-                            <GlassButton className="w-full">
+                            <GlassButton className="w-full h-12 rounded-xl">
                                 Me contacter
                             </GlassButton>
                         </Link>

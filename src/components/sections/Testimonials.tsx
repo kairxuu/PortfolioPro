@@ -10,7 +10,7 @@ const testimonials = [
         name: "Thomas D.",
         role: "CTO, StartUp Tech",
         image: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-        content: "L'approche AntiGravity d'Alexandre a complètement révolutionné notre produit. Le design est ultra-clean et les performances sous Next.js sont époustouflantes."
+        content: "L'approche d'Alexandre a complètement révolutionné notre produit. Le design est ultra-clean et les performances sous Next.js sont époustouflantes."
     },
     {
         name: "Sarah L.",
@@ -39,7 +39,7 @@ export const Testimonials = () => {
                     Ils ont Survolé les attentes
                 </motion.h2>
                 <p className="text-foreground-secondary max-w-2xl">
-                    Quelques retours de clients et collaborateurs avec qui j'ai eu l'opportunité de créer des expériences AntiGravity.
+                    Quelques retours de clients et collaborateurs avec qui j'ai eu l'opportunité de créer des expériences mémorables.
                 </p>
             </div>
 

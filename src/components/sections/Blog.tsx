@@ -7,7 +7,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 
 const posts = [
     {
-        title: "Mes principes pour un design AntiGravity",
+        title: "Mes principes pour un design d'exception",
         date: "12 Nov 2025",
         readTime: "4 min",
         category: "UI/UX Design",
@@ -42,7 +42,7 @@ export const Blog = () => {
                     Notes & Insights
                 </motion.h2>
                 <p className="text-foreground-secondary max-w-2xl text-left">
-                    Réflexions sur le design moderne, l'optimisation frontend et la culture AntiGravity.
+                    Réflexions sur le design moderne, l'optimisation frontend et la culture produit.
                 </p>
             </div>
 
