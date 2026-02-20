@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -16,14 +16,11 @@ export const Footer = () => {
                             Concevoir sans contraintes. Développer avec rigueur. Développeur Front-end & UI/UX Designer basé à Paris.
                         </p>
                         <div className="flex items-center gap-4 text-foreground/60">
-                            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground hover:scale-105 transition-all">
+                            <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer" className="hover:text-foreground hover:scale-105 transition-all">
                                 <Github className="w-5 h-5" />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground hover:scale-105 transition-all">
+                            <a href="https://www.linkedin.com/in/alexandre-keolasy-287887276" target="_blank" rel="noreferrer" className="hover:text-foreground hover:scale-105 transition-all">
                                 <Linkedin className="w-5 h-5" />
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-foreground hover:scale-105 transition-all">
-                                <Twitter className="w-5 h-5" />
                             </a>
                         </div>
                     </div>

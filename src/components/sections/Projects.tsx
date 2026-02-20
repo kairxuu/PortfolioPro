@@ -4,42 +4,21 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../ui/SectionWrapper";
 import { GlassCard } from "../ui/GlassCard";
 import { GlassButton } from "../ui/GlassButton";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Lock } from "lucide-react";
 import Link from "next/link";
 
 const projects = [
     {
-        title: "EcoSystem Dashboard",
-        role: "Lead Front-end & UI Designer",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-        desc: "Application de gestion d'énergie pour entreprises. Dashboard analytique ultra-performant aux visuels glassmorphism avec graphiques interactifs temps réel.",
-        stack: ["Next.js", "Tailwind", "Recharts", "Framer Motion"],
-        demoLink: "#",
-        githubLink: "#",
-        className: "md:col-span-2 md:row-span-2", // Featured project
-        imageClass: "h-64 md:h-80"
-    },
-    {
-        title: "Nova AI - Assistant",
-        role: "Full-Stack Dev",
-        image: "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2832&auto=format&fit=crop",
-        desc: "Interface conversationnelle IA futuriste avec dark mode complet.",
-        stack: ["React", "TypeScript", "OpenAI"],
-        demoLink: "#",
-        githubLink: "#",
-        className: "md:col-span-1 md:row-span-1",
-        imageClass: "h-40"
-    },
-    {
-        title: "FinanceFlow App",
-        role: "UI/UX & Front-end",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop",
-        desc: "Application Neo-banque mobile-first avec style iOS 26.",
-        stack: ["Next.js", "Radix UI", "Tailwind"],
-        demoLink: "#",
-        githubLink: "#",
-        className: "md:col-span-1 md:row-span-1",
-        imageClass: "h-40"
+        title: "Wyze Academy",
+        role: "Lead Front-end Developer",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+        desc: "Plateforme de formation professionnelle premium. Interface 'Dark Luxury', animations GSAP fluides et architecture front-end ultra-optimisée avec préchargement global.",
+        stack: ["React 18", "Tailwind CSS", "GSAP", "Vite"],
+        demoLink: "https://guinee.wyze-academy.com",
+        githubLink: "https://github.com/L-Ourabah/guinee2025",
+        isPrivate: true,
+        className: "md:col-span-3", // Full width for single project
+        imageClass: "h-64 md:h-[400px]"
     }
 ];
 
@@ -100,14 +79,26 @@ export const Projects = () => {
                                         Consulter <ExternalLink className="ml-2 w-4 h-4" />
                                     </GlassButton>
                                 </Link>
-                                <a
-                                    href={project.githubLink}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground-secondary hover:text-foreground hover:bg-foreground/5 transition-colors shrink-0 border border-[var(--glass-border)]"
-                                >
-                                    <Github className="w-5 h-5" />
-                                </a>
+                                {(project as any).isPrivate ? (
+                                    <div
+                                        title="Dépôt privé"
+                                        className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground/40 shrink-0 border border-[var(--glass-border)] cursor-not-allowed relative group/priv"
+                                    >
+                                        <Github className="w-5 h-5 opacity-50" />
+                                        <div className="absolute -bottom-1 -right-1 bg-background-secondary border border-[var(--glass-border)] rounded-full p-1 shadow-sm">
+                                            <Lock className="w-3 h-3 text-foreground" />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <a
+                                        href={project.githubLink}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground-secondary hover:text-foreground hover:bg-foreground/5 transition-colors shrink-0 border border-[var(--glass-border)]"
+                                    >
+                                        <Github className="w-5 h-5" />
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </GlassCard>

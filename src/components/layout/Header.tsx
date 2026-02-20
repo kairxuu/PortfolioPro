@@ -32,7 +32,7 @@ export const Header = () => {
         <header
             className={cn(
                 "fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-auto",
-                "bg-[var(--glass-bg)] backdrop-blur-2xl border border-[var(--glass-border)] shadow-[0_20px_40px_rgba(0,0,0,0.1)]",
+                "bg-[var(--glass-bg)] backdrop-blur-3xl border border-[var(--glass-border)] shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)]",
                 "rounded-full p-2 flex items-center gap-2 sm:gap-4",
                 scrolled ? "scale-95 opacity-90 hover:scale-100 hover:opacity-100" : "scale-100"
             )}
@@ -69,6 +69,14 @@ export const Header = () => {
 
             {/* CTA & Mobile Toggle */}
             <div className="flex items-center gap-2 shrink-0">
+                <div className="hidden md:flex items-center gap-2 mr-2 border-r border-[var(--glass-border)] pr-4">
+                    <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                        <Github className="w-4 h-4" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/alexandre-keolasy-287887276" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                        <Linkedin className="w-4 h-4" />
+                    </a>
+                </div>
                 <Link href="/contact" tabIndex={-1} className="hidden sm:block">
                     <GlassButton variant="primary" className="h-12 px-6 text-sm rounded-full">
                         Me contacter
@@ -108,10 +116,10 @@ export const Header = () => {
                     </ul>
                     <div className="flex flex-col gap-4 mt-2 border-t border-[var(--glass-border)] pt-6">
                         <div className="flex justify-center gap-6 text-foreground/70">
-                            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-foreground p-2 bg-background-secondary rounded-full">
+                            <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer" className="hover:text-foreground p-3 bg-background-secondary border border-[var(--glass-border)] rounded-full shadow-sm">
                                 <Github className="w-5 h-5" />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground p-2 bg-background-secondary rounded-full">
+                            <a href="https://www.linkedin.com/in/alexandre-keolasy-287887276" target="_blank" rel="noreferrer" className="hover:text-foreground p-3 bg-background-secondary border border-[var(--glass-border)] rounded-full shadow-sm">
                                 <Linkedin className="w-5 h-5" />
                             </a>
                         </div>
