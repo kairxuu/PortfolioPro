@@ -8,31 +8,31 @@ import { Layout, Zap, Search, Bot } from "lucide-react";
 const services = [
     {
         icon: <Layout className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors mb-4" />,
-        title: "Conception d'interfaces fluides (UI/UX)",
-        desc: "Design system sur-mesure, wireframes, prototypes interactifs et design final en Glassmorphism ou interfaces futuristes.",
-        bulletPoints: ["Figma & Prototypage", "Design System", "Dark Mode natif"],
-        className: "md:col-span-2 md:row-span-2" // Large feature
+        title: "Architecture & Design d'Interfaces",
+        desc: "Au-delà de l'esthétique, je conçois des interfaces pensées pour la conversion et l'expérience utilisateur. De l'élaboration de Design Systems robustes (Figma) au prototypage interactif, chaque vue est pensée pour maximiser l'engagement tout en respectant les standards d'accessibilité et les identités de marque.",
+        bulletPoints: ["Design Systems Scalables", "UX orientée Conversion", "Prototypage Haute Fidélité"],
+        className: "md:col-span-2 md:row-span-2"
     },
     {
         icon: <Zap className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors mb-4" />,
-        title: "Développement Web & Apps Performantes",
-        desc: "Intégration pixel-perfect avec Next.js, React et Tailwind CSS. Déploiement optimisé sur Vercel.",
-        bulletPoints: ["Next.js (App Router)", "TypeScript", "Animations fluides"],
-        className: "md:col-span-1 md:row-span-1" // Square
+        title: "Ingénierie Front-End Avancée",
+        desc: "Développement d'applications web complexes avec Next.js et React. L'accent est mis sur un code propre, modulaire, et fortement typé (TypeScript) garantissant une maintenabilité à long terme et une évolutivité sans friction.",
+        bulletPoints: ["Next.js (App Router) & React 18", "Architecture Clean Code", "Animations WebGL/GSAP"],
+        className: "md:col-span-1 md:row-span-1"
     },
     {
         icon: <Search className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors mb-4" />,
-        title: "Optimisation Performance & SEO Technique",
-        desc: "Audits Core Web Vitals, lazy loading, optimisation des assets et structure sémantique.",
-        bulletPoints: ["Score lighthouse 100", "Accessibilité AA", "SEO optimisé"],
-        className: "md:col-span-1 md:row-span-1" // Square
+        title: "Optimisation & SEO Technique",
+        desc: "Dans un environnement concurrentiel, la performance est cruciale. Audit et optimisation des Core Web Vitals, implémentation du Server-Side Rendering (SSR) et structuration sémantique pour garantir une indexation optimale par les moteurs de recherche.",
+        bulletPoints: ["Audit Core Web Vitals", "Server-Side Rendering (SSR)", "Sémantique & Accessibilité (A11y)"],
+        className: "md:col-span-1 md:row-span-1"
     },
     {
         icon: <Bot className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors mb-4" />,
-        title: "Intégration d'IA & Automatisations",
-        desc: "Ajout de fonctionnalités intelligentes et automatisation de processus pour enrichir l'expérience utilisateur et l'efficacité.",
-        bulletPoints: ["LLM API (OpenAI)", "Workflows", "Agents intelligents"],
-        className: "md:col-span-2 md:row-span-1" // Wide
+        title: "Intégration d'IA & Opérations Spéciales",
+        desc: "Modernisez vos processus métier en intégrant des solutions basées sur l'intelligence artificielle (API LLMs) ou en automatisant des flux de travail chronophages. L'objectif est de réduire la charge opérationnelle et de créer des outils internes à forte valeur ajoutée.",
+        bulletPoints: ["Intégration API LLM (OpenAI/Anthropic)", "Automatisation de Workflows", "Création d'Outils Internes"],
+        className: "md:col-span-2 md:row-span-1"
     }
 ];
 
@@ -57,8 +57,7 @@ export const Services = () => {
                 {services.map((service, index) => (
                     <GlassCard
                         key={index}
-                        hoverEffect
-                        className={`flex flex-col p-6 lg:p-8 group overflow-hidden relative ${service.className}`}
+                        className={`h-full flex flex-col p-8 group relative overflow-hidden ${service.className}`}
                     >
                         {/* Background Gradient flair */}
                         <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors duration-500 z-0" />

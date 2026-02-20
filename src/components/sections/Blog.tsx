@@ -55,7 +55,7 @@ export const Blog = () => {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
                     >
-                        <GlassCard hoverEffect className="h-full flex flex-col p-6 group cursor-pointer">
+                        <GlassCard className="h-full flex flex-col p-6 group cursor-pointer">
                             <div className="mb-4 flex items-center justify-between text-xs font-medium text-foreground-secondary">
                                 <span className="px-2 py-1 rounded bg-background-secondary border border-[var(--glass-border)] text-foreground-secondary">{post.category}</span>
                                 <div className="flex items-center gap-3">

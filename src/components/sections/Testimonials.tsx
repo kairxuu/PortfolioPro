@@ -52,7 +52,7 @@ export const Testimonials = () => {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
                     >
-                        <GlassCard hoverEffect className="h-full flex flex-col p-6 group">
+                        <GlassCard className="h-full flex flex-col p-6">
                             <Quote className="w-10 h-10 text-foreground/10 mb-4 group-hover:text-foreground-secondary transition-colors" />
                             <p className="text-foreground-secondary italic flex-grow mb-6 leading-relaxed">
                                 "{testimonial.content}"

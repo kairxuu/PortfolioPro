@@ -12,8 +12,8 @@ const projects = [
         title: "Wyze Academy",
         role: "Lead Front-end Developer",
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-        desc: "Plateforme de formation professionnelle premium. Interface 'Dark Luxury', animations GSAP fluides et architecture front-end ultra-optimisée avec préchargement global.",
-        stack: ["React 18", "Tailwind CSS", "GSAP", "Vite"],
+        desc: "Plateforme e-learning premium. Architecture front-end optimisée pour les performances (chargement différé, pré-rendu) couplée à une direction artistique 'Dark Luxury' exigeante. Intégration complexe d'animations GSAP sans compromettre les Core Web Vitals.",
+        stack: ["React 18", "Tailwind CSS", "GSAP", "Architecture Modulaire"],
         demoLink: "https://guinee.wyze-academy.com",
         githubLink: "https://github.com/L-Ourabah/guinee2025",
         isPrivate: true,
@@ -43,8 +43,7 @@ export const Projects = () => {
                 {projects.map((project, index) => (
                     <GlassCard
                         key={index}
-                        hoverEffect
-                        className={`flex flex-col p-0 group overflow-hidden ${project.className}`}
+                        className={`overflow-hidden flex flex-col h-full group ${project.className}`}
                     >
                         <div className={`relative w-full ${project.imageClass} shrink-0 overflow-hidden border-b border-[var(--glass-border)]`}>
                             <img

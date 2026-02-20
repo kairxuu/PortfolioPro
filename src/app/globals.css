@@ -8,8 +8,6 @@
   --color-glass: var(--glass-bg);
   --color-glass-border: var(--glass-border);
   --color-glass-border-hover: var(--glass-border-hover);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-subtle: var(--accent-subtle);
   --font-sans: var(--font-inter);
 }
 
@@ -24,10 +22,6 @@
   --glass-bg: rgba(255, 255, 255, 1);
   --glass-border: rgba(0, 0, 0, 0.06);
   --glass-border-hover: rgba(0, 0, 0, 0.12);
-
-  /* Single functional interactive color - rarely visible as text */
-  --accent-blue: #0066CC;
-  --accent-subtle: rgba(0, 102, 204, 0.1);
 }
 
 body {

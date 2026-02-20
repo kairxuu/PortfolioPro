@@ -1,18 +1,15 @@
 import { cn } from "@/lib/utils";
 import { HTMLAttributes, forwardRef } from "react";
 
-export interface GlassCardProps extends HTMLAttributes<HTMLDivElement> {
-    hoverEffect?: boolean;
-}
+export interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
-    ({ className, hoverEffect = false, children, ...props }, ref) => {
+    ({ className, children, ...props }, ref) => {
         return (
             <div
                 ref={ref}
                 className={cn(
-                    "glass-panel rounded-3xl p-6 transition-all duration-500 ease-out relative overflow-hidden bg-[var(--glass-bg)] shadow-[0_4px_24px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.04)]",
-                    hoverEffect && "hover:border-[var(--glass-border-hover)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.05)]",
+                    "glass-panel rounded-2xl md:rounded-3xl border border-[var(--glass-border)] bg-[var(--glass-bg)] shadow-[var(--glass-shadow)] backdrop-blur-md overflow-hidden transition-all duration-300",
                     className
                 )}
                 {...props}

@@ -8,36 +8,36 @@ import { Compass, Palette, Code2, Rocket, LineChart } from "lucide-react";
 const steps = [
     {
         step: "01",
-        title: "Discovery & Stratégie",
-        desc: "Analyse des besoins et stratégie technique.",
+        title: "Discovery & Cadrage",
+        desc: "Audit approfondi des besoins métiers et de l'existant. Définition des objectifs (KPIs), choix de l'architecture technique (Stack) et élaboration d'une stratégie sur-mesure pour garantir le ROI du projet.",
         icon: <Compass className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     },
     {
         step: "02",
-        title: "Wireframes & UI",
-        desc: "Conception en Glassmorphism dark et protos intéractifs.",
+        title: "Architecture & UI/UX",
+        desc: "Conception centrée utilisateur. Création de wireframes, élaboration du Design System et prototypage interactif haute-fidélité pour valider les parcours utilisateurs avant tout développement.",
         icon: <Palette className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     },
     {
         step: "03",
-        title: "Développement",
-        desc: "Code modulaire et performant avec Next.js et Tailwind.",
+        title: "Ingénierie & Développement",
+        desc: "Implémentation d'une base de code pérenne et scalable (Next.js/React). Approche modulaire, intégration d'APIs tierces et respect strict des bonnes pratiques d'ingénierie logicielle.",
         icon: <Code2 className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     },
     {
         step: "04",
-        title: "Tests & Déploiement Vercel",
-        desc: "Audits de performance rigoureux, correction de bugs et mise en production fluide (CI/CD).",
+        title: "QA, Tests & Déploiement Continu",
+        desc: "Contrôle qualité rigoureux (tests unitaires/E2E), audits de performance (Lighthouse) et mise en place de pipelines d'intégration continue (CI/CD) pour un déploiement sécurisé sans interruption de service.",
         icon: <Rocket className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-2"
     },
     {
         step: "05",
-        title: "Suivi & Évolutions",
-        desc: "Monitoring post-lancement et optimisations continues.",
+        title: "Monitoring & Évolutions",
+        desc: "Suivi post-lancement de la stabilité et des performances. Analyse des données d'utilisation pour itérer rapidement et déployer de nouvelles fonctionnalités à forte valeur ajoutée.",
         icon: <LineChart className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors" />,
         className: "md:col-span-1"
     }
@@ -64,7 +64,6 @@ export const Process = () => {
                 {steps.map((step, index) => (
                     <GlassCard
                         key={index}
-                        hoverEffect
                         className={`flex flex-col p-6 group relative overflow-hidden ${step.className}`}
                     >
                         <div className="absolute top-0 right-0 p-6 text-5xl font-bold text-foreground/5 group-hover:text-foreground/10 transition-colors pointer-events-none select-none">
