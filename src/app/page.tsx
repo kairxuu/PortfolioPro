@@ -58,7 +58,7 @@ export default function Home() {
               Alexandre KEOLASY.
             </h1>
             <p className="text-2xl md:text-3xl text-foreground-secondary max-w-5xl mx-auto font-light leading-tight mb-12 tracking-tight">
-              Développeur WEB. <br className="hidden md:block" />Faite de vos idées une réalité.
+              Étudiant en BTS SIO & Développeur Web. <br className="hidden md:block" />Passionné de logique et créateur de projets web.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/projets">
@@ -91,9 +91,7 @@ export default function Home() {
                 Alexandre Keolasy
               </h3>
               <p className="text-foreground-secondary text-xl font-light leading-relaxed max-w-2xl mb-10">
-                Spécialisé dans les écosystèmes modernes comme Next.js et React, mon approche allie
-                une rigueur technique absolue à un minimalisme fonctionnel. Pas de superflu,
-                uniquement l'essentiel pour des expériences mémorables.
+                Passionné par le développement depuis le lycée, je suis actuellement en <strong>BTS SIO</strong>. J'adore transformer mes idées en véritables projets et je m'épanouis en découvrant de nouvelles technologies de pointe. Toujours prêt à relever de nouveaux défis !
               </p>
               <Link href="/about" className="text-foreground flex items-center gap-2 text-lg font-medium hover:text-foreground/70 transition-colors w-fit group-hover:translate-x-2 duration-300">
                 Découvrir mon parcours <ArrowRight className="w-5 h-5" />
@@ -103,8 +101,8 @@ export default function Home() {
 
           {/* Huge Stat snippet */}
           <GlassCard hoverEffect className="md:col-span-4 lg:col-span-5 p-10 md:p-14 flex flex-col items-center justify-center text-center group">
-            <span className="text-8xl lg:text-[10rem] font-bold text-foreground tracking-tighter mb-4 transform group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700 ease-out drop-shadow-sm group-hover:drop-shadow-xl" style={{ letterSpacing: "-0.05em" }}>5+</span>
-            <span className="text-foreground-secondary text-xl font-medium tracking-wide border-t border-[var(--glass-border)] pt-6 w-full text-center">Années d'expérience</span>
+            <span className="text-8xl lg:text-[10rem] font-bold text-foreground tracking-tighter mb-4 transform group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700 ease-out drop-shadow-sm group-hover:drop-shadow-xl" style={{ letterSpacing: "-0.05em" }}>100%</span>
+            <span className="text-foreground-secondary text-xl font-medium tracking-wide border-t border-[var(--glass-border)] pt-6 w-full text-center">Passion & Dévouement</span>
           </GlassCard>
 
           {/* Expertises highlight */}

@@ -6,7 +6,7 @@ import { GlassCard } from "../ui/GlassCard";
 import { MapPin, Zap, Target, Layers } from "lucide-react";
 
 const stack = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Framer Motion", "Node.js", "Figma"
+    "JavaScript", "React.js", "Tailwind CSS", "Next.js", "PHP", "MySQL", "Framer Motion", "Figma"
 ];
 
 const values = [
@@ -35,12 +35,15 @@ export const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 auto-rows-[minmax(0,1fr)]">
                 {/* Main Bio - Large Tile */}
                 <GlassCard hoverEffect className="md:col-span-2 md:row-span-2 flex flex-col justify-center p-8 group relative overflow-hidden">
-                    <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">À propos de moi</h3>
-                    <p className="text-foreground-secondary text-lg leading-relaxed relative z-10 mb-4">
-                        Je suis <strong className="text-foreground font-semibold">Alexandre Keolasy</strong>, développeur front-end & UI/UX designer basé à Paris. Mon objectif est de fusionner le design ultra-moderne avec des performances techniques de pointe pour créer des expériences web qui marquent les esprits.
+                    <h3 className="text-3xl font-bold text-foreground mb-6 relative z-10 tracking-tight">Mon Parcours</h3>
+                    <p className="text-foreground-secondary text-lg leading-relaxed relative z-10 mb-5">
+                        👋 Hello ! Je suis <strong className="text-foreground font-semibold">Alexandre Keolasy</strong>. Passionné de web, j’ai commencé mon aventure avec les mathématiques, où j’ai attrapé le virus de la logique et des défis à résoudre.
                     </p>
-                    <p className="text-foreground-secondary leading-relaxed relative z-10">
-                        Spécialisé dans les écosystèmes modernes comme <strong>Next.js</strong> et <strong>React</strong>, j'intègre l'IA et les meilleures pratiques d'optimisation pour offrir un résultat <span className="font-medium text-foreground">Premium</span> : léger, rapide et fluide.
+                    <p className="text-foreground-secondary text-lg leading-relaxed relative z-10 mb-5">
+                        Aujourd’hui étudiant en <strong>BTS SIO au Groupe Aurlom (Paris)</strong>, je m’investis pleinement dans l'apprentissage de la programmation et j'expérimente sans cesse de nouvelles technologies. J'adore transformer mes idées en projets concrets, comme lors de mon stage chez Wyze Academy.
+                    </p>
+                    <p className="text-foreground-secondary text-lg leading-relaxed relative z-10">
+                        Ce qui me motive ? Rejoindre une équipe dynamique, travailler sur des projets web innovants et donner vie à des interfaces modernes !
                     </p>
                 </GlassCard>
 
@@ -69,8 +72,8 @@ export const About = () => {
                     <div className="w-16 h-16 rounded-full bg-background/40 border border-[var(--glass-border)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                         <MapPin className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors" />
                     </div>
-                    <h4 className="text-lg font-bold text-foreground mb-1">Basé à Paris</h4>
-                    <p className="text-sm text-foreground-secondary">Remote Friendly</p>
+                    <h4 className="text-lg font-bold text-foreground mb-1">Saint-Ouen</h4>
+                    <p className="text-sm text-foreground-secondary">Île-de-France (Remote OK)</p>
                 </GlassCard>
 
                 {/* Values - Square Tile */}
