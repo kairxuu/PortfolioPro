@@ -112,7 +112,7 @@ export default function Home() {
               Alexandre KEOLASY.
             </h1>
             <p className="text-2xl md:text-3xl text-neutral-400 max-w-5xl mx-auto font-light leading-tight mb-12 tracking-tight">
-              Ingénierie Front-End & Design d'Interfaces. <br className="hidden md:block" />Je conçois des écosystèmes web performants, scalables et centrés sur la conversion.
+              Développeur Front-End & Back-End. <br className="hidden md:block" />Je conçois des écosystèmes web performants, scalables et centrés sur la conversion.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/projets">
