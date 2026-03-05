@@ -21,26 +21,6 @@ const fullProjects = [
         githubLink: "#",
         isPrivate: true,
     },
-    {
-        title: "Tableau de Bord Financier",
-        role: "Ingénieur Front-End",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
-        desc: "Application métier interne de visualisation de données haute fréquence. Création d'un design system complet et robuste avec Radix UI. Optimisation des rendus React lors des mises à jour massives de données websocket.",
-        stack: ["Next.js", "TypeScript", "Radix UI", "Recharts", "Websockets"],
-        demoLink: "#",
-        githubLink: "#",
-        isPrivate: true,
-    },
-    {
-        title: "Portfolio Architecture",
-        role: "Design & Développement",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2070",
-        desc: "Site vitrine expérientiel pour un cabinet d'architecture. Navigation fluide via des transitions de page personnalisées. Mise en avant typographique et traitement photographique monochrome très poussé.",
-        stack: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-        demoLink: "#",
-        githubLink: "https://github.com/kairxuu",
-        isPrivate: false,
-    }
 ];
 
 export default function ProjetsPage() {

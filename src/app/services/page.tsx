@@ -18,9 +18,9 @@ const servicesList = [
     },
     {
         icon: Code2,
-        title: "Ingénierie Front-End Avancée",
+        title: "Développement Front-End",
         tag: "Développement React / Next.js",
-        desc: "Expert de l'écosystème React, je construis des fondations solides pour vos applications web. Mon approche garantit un code modulaire, typé (TypeScript) et facile à maintenir. J'intègre les maquettes au pixel près tout en assurant une scalabilité à long terme.",
+        desc: "Je conçois des interfaces web modernes avec React et Next.js, en privilégiant un code clair. J’accorde une attention particulière à la fidélité des maquettes et à la maintenabilité du projet sur le long terme.",
         features: ["Single Page Applications (SPA)", "Server-Side Rendering (SSR) avec Next.js", "State Management complexe", "Intégration d'API headless"]
     },
     {
